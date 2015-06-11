@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Leaderboard</title>
-  </head>
-  <style type="text/css">
-    body {
-      text-align: center;
-    }
-    div{
-      border: 2px solid black;
-      width: 40%;
-      margin-left: auto;
-      margin-right: auto;
-      margin-top: 5px;
-    }
-  </style>
-  <body>
-    <h1>Leaderboard</h1>
-    <ul>
-    </ul>
+
+<head>
+  <link rel="stylesheet" href="main.css">
+  <title>Leaderboard</title>
+</head>
+
+<body>
+  <h1>Leaderboard</h1>
+  <div class="container">
+    <button type="button" style "display: left;" class="edit">Edit Points</button>
+    <button type="button" class="save" style="display:none">Save Points</button>
+    <div class="people-list">
+      <div class="person" style='display: none;'>
+        <span class="order"></span>
+        <span class="name">Name</span>
+        <span class='points'>Points</span>
+        <span>
+          <input type="number" class="input hidden">
+        </span>
+      </div>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="script.js"></script>
-  </body>
+  </div>
+</body>
+
 </html>

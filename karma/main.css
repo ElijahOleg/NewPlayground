@@ -1,0 +1,49 @@
+h1{
+  color:white;
+  padding:20px;
+  border: 2px solid black;
+  border-radius: 30px;
+  background-color: #B66666;
+}
+
+div{
+  border: 2px solid black;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+}
+body {
+  text-align: center;
+  background-color: #4B577B;
+}
+
+.person{
+  border-radius: 20px;
+  background-color: #333;
+  color:white;
+  width:180px;
+}
+.container{
+  width:500px;
+  background-color: #B66666;
+
+}
+.points{
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 17px;
+  display: inline-block;
+  text-align: center;
+  background-color: #999;
+  float:right;
+  cursor: pointer;
+}
+.input{
+  width: 30px;
+  float: right;
+}
+
+.hidden {
+  display: none;
+}
