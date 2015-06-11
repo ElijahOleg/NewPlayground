@@ -16,7 +16,7 @@ var Karma = {
     return b.points - a.points;
   },
   data: [],
-  forceGet : true
+  forceGet: true
 };
 
 $(document).ready(function() {
@@ -33,21 +33,25 @@ $(document).ready(function() {
   });
 
   $(".people-list").append(peopleArray);
+  $("input").text()
 
-  $(".edit").click(function(){
+  $(".edit").click(function() {
     $(".input").show();
+    $(".input").text(this.points)
     $(".save").show();
     $(".points").hide();
+    $("input").val(Karma.data.points);
   });
 
   $("div.person")
-  .on("dblclick",".points", function() {
-    var person = $(this).parents(".person")
-    $(this).closest(".points").hide();
-    $(this).closest(".person").find(".input").show();
-  })
-  .on("keyup","input", function (event){
-    if (event.which === 13) {
+    .on("dblclick", ".points", function() {
+      var person = $(this).parents(".person")
+      $(this).closest(".points").hide();
+      $(this).closest(".person").find(".input").show();
+      $(".save").show();
+    })
+    .on("keyup", "input", function(event) {
+      if (event.which === 13) {
         console.log($(this).val());
         $(this).closest(".person").find(".points").html($(this).val());
         $(this).closest(".person").find(".points").show();
@@ -57,17 +61,25 @@ $(document).ready(function() {
         Karma.modifyPointFor(index, $(this).val());
         location.reload(Karma.forceGet);
       }
-  });
+    });
 
-  $(".save").click(function(){
-    $(".save").hide();
-    $(this).closest(".person").find(".points").html($(this).val());
-    $(this).closest(".person").find(".points").show();
-    $(this).closest(".person").find(".input").hide();
-    var person = $(this).parents(".person");
-    var index = person.data("order");
-    Karma.modifyPointFor(index, $(this).val());
-    location.reload(Karma.forceGet);
+  $(".save").click(function() {
+    $(".input").each(function(){
+      $(".input").hide();
+      $(".input").closest(".person").find(".points").html($(".input").val());
+      $(".input").closest(".person").find(".points").show();
+      $(".input").closest(".person").find(".input").hide();
+      var person = $(".input").parents(".person");
+      var index = person.data("order");
+
+
+      if($(this).val()){
+        console.log($('input').val());
+        Karma.modifyPointFor(index, $("input").val());
+      }
+      // location.reload(Karma.forceGet);
+    })
+      $(".save").hide();
   })
 });
 //   // var $body = $(".container");
